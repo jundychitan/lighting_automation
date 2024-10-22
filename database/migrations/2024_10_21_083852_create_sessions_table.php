@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id', 255)->primary();
-            $table->unsignedBigInteger('user_id')->index()->nullable()->default('DEFAULT NULL');
-            $table->string('ip_address', 45)->nullable()->default('DEFAULT NULL');
-            $table->text('user_agent')->nullable()->default('DEFAULT NULL');
+            $table->string('id', 255)->key();
+            $table->unsignedBigInteger('user_id')->index()->nullable()->default(NULL);
+            $table->string('ip_address', 45)->nullable()->default(NULL);
+            $table->text('user_agent')->nullable()->default(NULL);
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });

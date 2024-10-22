@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('las_panel_tb', function (Blueprint $table) {
-            $table->integer('panel_id')->primary()->autoIncrement();
-            $table->text('panel_name')->nullable()->default('DEFAULT NULL');
-            $table->dateTime('created_at')->nullable()->default('DEFAULT NULL');
-            $table->integer('created_by_user_idx')->nullable()->default('DEFAULT NULL');
-            $table->dateTime('updated_at')->nullable()->default('DEFAULT NULL');
-            $table->integer('modified_by_user_idx')->nullable()->default('DEFAULT NULL');
+            $table->integer('panel_id')->key()->autoIncrement();
+            $table->text('panel_name')->nullable()->default(NULL);
+            $table->dateTime('created_at')->nullable()->default(NULL);
+            $table->integer('created_by_user_idx')->nullable()->default(NULL);
+            $table->dateTime('updated_at')->nullable()->default(NULL);
+            $table->integer('modified_by_user_idx')->nullable()->default(NULL);
         });
     }
 

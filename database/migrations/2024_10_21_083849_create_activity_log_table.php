@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('activity_log', function (Blueprint $table) {
             $table->id();
-            $table->string('log_name', 255)->index()->nullable()->default('DEFAULT NULL');
+            $table->string('log_name', 255)->index()->nullable()->default(NULL);
             $table->text('description');
-            $table->string('subject_type', 255)->nullable()->default('DEFAULT NULL');
-            $table->unsignedBigInteger('subject_id')->nullable()->default('DEFAULT NULL');
-            $table->string('causer_type', 255)->nullable()->default('DEFAULT NULL');
-            $table->unsignedBigInteger('causer_id')->nullable()->default('DEFAULT NULL');
-            $table->longText('properties')->nullable()->default('DEFAULT NULL');
-            $table->timestamp('created_at')->nullable()->default('DEFAULT NULL');
-            $table->timestamp('updated_at')->nullable()->default('DEFAULT NULL');
+            $table->string('subject_type', 255)->nullable()->default(NULL);
+            $table->unsignedBigInteger('subject_id')->nullable()->default(NULL);
+            $table->string('causer_type', 255)->nullable()->default(NULL);
+            $table->unsignedBigInteger('causer_id')->nullable()->default(NULL);
+            $table->longText('properties')->nullable()->default(NULL);
+            $table->timestamp('created_at')->nullable()->default(NULL);
+            $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->index(['subject_type', 'subject_id']);
             $table->index(['causer_type', 'causer_id']);
         });

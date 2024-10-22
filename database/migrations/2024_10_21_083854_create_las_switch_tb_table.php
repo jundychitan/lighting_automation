@@ -12,20 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('las_switch_tb', function (Blueprint $table) {
-            $table->integer('switch_id')->primary()->autoIncrement();
-            $table->text('switch_name')->nullable()->default('DEFAULT NULL');
+            $table->integer('switch_id')->key()->autoIncrement();
+            $table->text('switch_name')->nullable()->default(NULL);
             $table->integer('switch_state')->nullable();
-            $table->dateTime('heart_beat')->nullable()->default('DEFAULT NULL')->comment('Status  ( Offline After 5 Minutes ) ');
-            $table->time('switch_on_time')->nullable()->default('DEFAULT NULL');
-            $table->time('switch_off_time')->nullable()->default('DEFAULT NULL');
-            $table->text('switch_send_cmd')->nullable()->default('DEFAULT NULL');
-            $table->integer('switch_module_id')->nullable()->default('DEFAULT NULL');
-            $table->integer('switch_relay_no')->nullable()->default('DEFAULT NULL');
-            $table->text('switch_panel_name')->nullable()->default('DEFAULT NULL');
-            $table->dateTime('created_at')->nullable()->default('DEFAULT NULL');
-            $table->integer('created_by_user_idx')->nullable()->default('DEFAULT NULL');
-            $table->dateTime('updated_at')->nullable()->default('DEFAULT NULL');
-            $table->integer('modified_by_user_idx')->nullable()->default('DEFAULT NULL');
+            $table->dateTime('heart_beat')->nullable()->default(NULL)->comment('Status  ( Offline After 5 Minutes ) ');
+            $table->time('switch_on_time')->nullable()->default(NULL);
+            $table->time('switch_off_time')->nullable()->default(NULL);
+            $table->text('switch_send_cmd')->nullable()->default(NULL);
+            $table->integer('switch_module_id')->nullable()->default(NULL);
+            $table->integer('switch_relay_no')->nullable()->default(NULL);
+            $table->text('switch_panel_name')->nullable()->default(NULL);
+            $table->dateTime('created_at')->nullable()->default(NULL);
+            $table->integer('created_by_user_idx')->nullable()->default(NULL);
+            $table->dateTime('updated_at')->nullable()->default(NULL);
+            $table->integer('modified_by_user_idx')->nullable()->default(NULL);
         });
     }
 
