@@ -143,7 +143,7 @@ class LASSwitchController extends Controller
 						$diff					= date_diff($date1,$date2);
 						$days_last_active 		= $diff->format("%a");
 						/*five minutes in seconds*/
-						$fiveMinutes = 60 * 5;				
+						$fiveMinutes = 60 * 2;				
 						
 						if($heart_beat == "0000-00-00 00:00:00" || $heart_beat == ''){
 							 return $statusBtn = '<div style="color:black; font-weight:bold; text-align:center;" title="No Heart Beat">No Heart Beat</div>';
@@ -201,7 +201,7 @@ class LASSwitchController extends Controller
 	public function OFFSwitch(Request $request){
 			$switch = new SwitchModel();
 			$switch = SwitchModel::find($request->switchID);
-			$switch->switch_state = 5;
+			$switch->switch_state = 2;
 			$result = $switch->update();
 			$data = SwitchModel::find($request->switchID, ['switch_name','switch_module_id','switch_relay_no']);
 			/*Create A File*/
